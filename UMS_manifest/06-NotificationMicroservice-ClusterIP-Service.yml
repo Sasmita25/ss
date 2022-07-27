@@ -1,0 +1,14 @@
+#sample
+apiVersion: v1
+kind: Service
+metadata:
+  name: notification-clusterip-service
+  labels:
+    app: notification-restapp
+spec:
+  type: LoadBalancer
+  selector:
+    app: notification-restapp
+  ports:
+  - port: 8096
+    targetPort: 8096
