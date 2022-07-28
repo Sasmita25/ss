@@ -1,0 +1,15 @@
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  annotations:
+  labels:
+    app: usermgmt-restapp
+  name: hpa-samples
+spec:
+  minReplicas: 3
+  maxReplicas: 30
+  metrics:
+  scaleTargetRef:
+    apiVersion: apps/v1beta2
+    kind: Deployment
+    name: hpa-samples
